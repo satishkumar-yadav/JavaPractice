@@ -1,4 +1,4 @@
-public class ReplaceVowelWithUnderscore {
+public class ReplaceVowelGT3WithUnderscore {
     
     static void vowelCount(String s) {
         char ch[] = s.toCharArray();
