@@ -12,8 +12,8 @@ public class PrintOccurenceCountOfOnlyDupChar {
 
     static void countDup(String s) { 
         String res = "";
-        String countIndex = "";
-        String charList = "";
+        // String countIndex = "";
+        // String charList = "";
                                                      //     ij
         for (int i = 0; i < s.length(); i++) {         // Hello World
              char c = s.charAt(i);
@@ -22,17 +22,26 @@ public class PrintOccurenceCountOfOnlyDupChar {
                 continue;
             }
 
-            int count =0;
+            int currentCount =0;
+            int totalCount = 0;
+
+             // count total occurence
+             for (int j = 0; j <s.length(); j++) {
+                 if (s.charAt(j) == c)
+                     totalCount++;
+             }
+
+             // count occurence till index
             // countIndex += count;
             for(int j=0; j<=i; j++){
-                if(s.charAt(j)==c) count++;
+                if(s.charAt(j)==c) currentCount++;
             }
                    
-            // if(count==1) res += c;
-            // else res += count;
+            if(totalCount==1) res += c;
+            else res += currentCount;
         }
 
-        System.out.println(countIndex);
+        System.out.println(res);
     }
 
    

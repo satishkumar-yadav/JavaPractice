@@ -1,0 +1,11 @@
+Harshad num - number divisible by sum of digit : 18, 1+8=9 , 18%9 = 0 
+
+Sunny number - if n+1 is perfect square  : 8, 9 , 9^1/2 = 3
+
+Disarium number - sum of digit powered by their position : 135 , 1^1+3^2+5^3 = 135
+
+Trimorphic number : cube ends with same number : 4, 4^3 = 64 
+
+Happy number : sum of square of digits eventually becomes 1
+
+factorial, sum of digit until sum is single digit, prime, fibonacci series, tribonacci series , lcm, hcf, 
