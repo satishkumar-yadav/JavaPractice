@@ -1,23 +1,18 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Mobile2Driver {
+public class Mobile2Driver { 
+    static int count = 0;
      
     static void display(Mobile2 []m){
-        for (Mobile2 mob : m) {
-            System.out.println(mob);
-        }
+        for(int i=0; i<count; i++)  System.out.println(m[i]);
+      //  for (Mobile2 mob : m) System.out.println(mob);
     }
 
     public static void main(String[] args) {
-       Mobile2 m1 = new Mobile2("Oppo", 4, 128, 8000, "While");
-       Mobile2 m2 = new Mobile2("Poco", 8, 256, 15000, "Blue");
-       Mobile2 m3 = new Mobile2("Vivo", 6, 64, 9000, "Red");
-       Mobile2 m4 = new Mobile2("Mi", 2, 32, 4000, "Black");
-       Mobile2 m5 = new Mobile2("Samsung", 12, 512, 42000, "Aqua");
-
-       Mobile2 [] m = {m1};
-
+      int n=10;
+      Mobile2[] m = new Mobile2[n];
+      // for(int i=0;i<m.length;i++){ if(m[i] != null) count++;  }
        Scanner s = new Scanner(System.in);
 
        while (true) {
@@ -25,61 +20,71 @@ public class Mobile2Driver {
            int ch = s.nextInt();
 
            switch (ch) {
-            case 1: System.out.println("Mobile Added.");
+            case 1: {
+                 System.out.println("\n Enter Mobile Details: Name, Ram, Rom, Price, Color");
+                 String name = s.next();
+                 int ram = s.nextInt();
+                 int rom = s.nextInt();
+                 double price = s.nextDouble();
+                 String color = s.next();
+
+                 m[count++] = new Mobile2(name, ram, rom, price, color);
+                 System.out.println("Mobile added Successfully.");
+                 display(m);
+            } 
                 
                 break;
-            case 2: { if(m.length>=2) {
-                       Arrays.sort(m, (new Sort.SortByName()));
+            case 2: { if(count>=2) {        //   { if(m.length>=2) {
+                      // Arrays.sort(m, (new Sort.SortByName()));
+                      Arrays.sort(m, 0, count, (new Sort.SortByName()));
                       display(m); }
-                    else  System.out.println("Add at least 2 Mobiles first !");
+                    else  System.out.println("\n Add at least 2 Mobiles first !");
                     }
                 break;
             case 3: {
-                if (m.length >= 2) {
-                    Arrays.sort(m, (new Sort.SortByColor()));
+                if (count >= 2) {
+                    Arrays.sort(m,  0, count, (new Sort.SortByColor()));
                     display(m);
                 } else
-                    System.out.println("Add at least 2 Mobiles first !");
+                    System.out.println("\n Add at least 2 Mobiles first !");
             }
                 break;    
             case 4: {
-                if (m.length >= 2) {
-                    Arrays.sort(m, (new Sort.SortByRam()));
+                if (count >= 2) {
+                    Arrays.sort(m,  0, count, (new Sort.SortByRam()));
                     display(m);
                 } else
-                    System.out.println("Add at least 2 Mobiles first !");
+                    System.out.println("\n Add at least 2 Mobiles first !");
             }
                 break;
             case 5: {
-                if (m.length >= 2) {
-                    Arrays.sort(m, (new Sort.SortByRom()));
+                if (count >= 2) {
+                    Arrays.sort(m,  0, count, (new Sort.SortByRom()));
                     display(m);
                 } else
-                    System.out.println("Add at least 2 Mobiles first !");
+                    System.out.println("\n Add at least 2 Mobiles first !");
             }
                 break;
             case 6: {
-                if (m.length >= 2) {
-                    Arrays.sort(m, (new Sort.SortByPriceLtoH()));
+                if (count >= 2) {
+                    Arrays.sort(m,  0, count, (new Sort.SortByPriceLtoH()));
                     display(m);
                 } else
-                    System.out.println("Add at least 2 Mobiles first !");
+                    System.out.println("\n Add at least 2 Mobiles first !");
             }
                 break;
             case 7: {
-                if (m.length >= 2) {
-                    Arrays.sort(m, (new Sort.SortByPriceHtoL()));
+                if (count >= 2) {
+                    Arrays.sort(m,  0, count, (new Sort.SortByPriceHtoL()));
                     display(m);
                 } else
-                    System.out.println("Add at least 2 Mobiles first !");
+                    System.out.println("\n Add at least 2 Mobiles first !");
             }
                 break;
-            case 8: return ;
+            case 8: { s.close();  return;}
                               
            }
        }
-
-      
 
     }
 }
