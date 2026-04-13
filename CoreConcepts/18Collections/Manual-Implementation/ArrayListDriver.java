@@ -1,6 +1,6 @@
 
 
-public class Test {
+public class ArrayListDriver {
     public static void main(String[] args) {
         //A a = new B();  // upcasting    - B to A
         // B b = (B) a;  // downcasting   - A to B 
@@ -12,24 +12,25 @@ public class Test {
       //  System.out.println(list);
 
       //  list.add(20);  // autoboxing   primitive to Wrapper   , new Integer(20);
-        // list.add(30);
-        // list.add(10);
+        list.add(30);
+        list.add(10); 
         // list.add(80);
         // list.add(60);
         // list.add(90);
         // list.add(40);
         // list.add(50);
-         list.add(70);
-         list.add(5);
+        // list.add(70);
+        // list.add(5);
         //list.add(new Integer(3));  // deprecated
 
 
         System.out.println(list.size());
-        System.out.println(list);
+       // System.out.println(list);
+       list.display();
+       System.out.println();
 
-
-        list.add(0, 25);
-       // list.add(1, 35);
+        list.add(2, 25);
+       // list.add(1, 35);    // not working when list is empty
 
       //  System.out.println(list.get(0));
 
