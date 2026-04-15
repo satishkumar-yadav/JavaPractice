@@ -6,7 +6,7 @@ public class LinkedList {
     public String toString() {
         if (head == null)
             return "null"; 
-        String s = "";
+        String s = "Head -> ";
         Node current = head;
 
         while (current != null) {
@@ -14,7 +14,7 @@ public class LinkedList {
             if(current.next != null) s += " -> ";
             current = current.next;
         }
-        return s ;
+        return s+" -> null" ;
     }
 
     public void add(Object data){
@@ -56,7 +56,7 @@ public class LinkedList {
     }
 
     public void add(int index, Object data) {
-        if (index <= 0 || index >= size())
+        if (index <= 0 || index >= size())  // index >= size() - data is not added at last
             throw new IndexOutOfBoundsException(); // if not then it will throw null pointer exception
         Node current = head;
         Node n = new Node(data);
@@ -117,7 +117,7 @@ public class LinkedList {
 
     public void remove(int index) {
         if (index <= 0 || index >= size())
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException(); 
         Node current = head;
         for (int i = 1; i < index; i++) {
             current = current.next;
@@ -135,6 +135,40 @@ public class LinkedList {
         Node current = head;
         current.next = null;
         count=0;
+    }
+
+    public void reverse(){
+        Node next=null, prev=null, current=head;
+
+        while(current != null){
+            next= current.next;
+            current.next=prev;
+            prev=current;
+            current=next;
+        }
+        head=prev;
+
+    }
+
+    public boolean contains(Object o){
+        Node current =head;
+        while(current!=null){
+            if(current.data.equals(o)) return true;
+            current=current.next;
+        }
+        return false;
+    }
+    
+
+    public void set(int index,  Object o){
+        if (index <= 0 || index >= size()) 
+            throw new IndexOutOfBoundsException(); 
+
+        Node current = head;
+        for (int i = 1; i < index; i++) {
+            current = current.next;
+        }
+       current.next.data=o;     
     }
 
 }
