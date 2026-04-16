@@ -21,18 +21,11 @@ public class Queue {
         arr[count++] = o;
     }
 
-    public int size() {
-        return count;
-    }
+    public int size() { return count; }
 
-    public boolean isEmpty() {
-        return count == 0;
-    }
+    public boolean isEmpty() {  return count == 0; }
 
-    public Object peek() {
-        // System.out.println(count);
-        return arr[0];
-    }
+    public Object peek() {  return arr[0];  }
 
     public Object poll() {
         Object ele = arr[0];
