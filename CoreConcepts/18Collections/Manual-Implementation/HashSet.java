@@ -26,7 +26,7 @@ class HashSet{
         int index = Math.abs(data.hashCode() % a.length);
         Node current = a[index];
         while (current != null) {
-            if (current.data.equals(data))
+            if (current.data.equals(data))         
                 return true;
             current = current.next;
         }
@@ -36,20 +36,19 @@ class HashSet{
     public boolean remove(Object data) {
         int index = Math.abs(data.hashCode() % a.length);
         Node current = a[index];
-        Node temp=a[index];
-        int c=0;
+        Node prev = null;
         while (current != null) {
             if (current.data.equals(data))
             {
-                temp.next= temp.next.next;
+                if(prev==null) a[index]=current.next;  //removing first node
+                else prev.next=current.next;    // removing middle/end node
                 count--;
                 return true;
             }
             current = current.next;
-            if(c!=0) temp=temp.next;
-            c++;
+            prev=current;
         }
-        return false;
+        return false;       
     }
 
     public void display(){
@@ -67,3 +66,50 @@ class HashSet{
     public boolean isEmpty(){return count==0;}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   public boolean remove(Object data) {
+//         int index = Math.abs(data.hashCode() % a.length);
+//        // System.out.println("index: "+index);
+//         Node current = a[index];
+//        // System.out.println("current: "+current);
+//        // Node temp=a[index];
+//         Node prev = null;
+//       //  int c=0;
+//         while (current != null) {
+//             // System.out.println("curr data: "+current.data);
+//             // System.out.println("curr next : "+current.next);
+//             // System.out.println("temp data: " + temp.data);
+//             // System.out.println("temp next : " + temp.next);
+//             if (current.data.equals(data))
+//             {
+//                 if(prev==null) a[index]=current.next;  //removing first node
+//                 else prev.next=current.next;    // removing middle/end node
+
+//                 // if(current.next==null) current=null;
+//                 // else if(c==0) current.next=current.next.next;
+//                 // else temp.next= temp.next.next;
+//                 count--;
+//                 return true;
+//             }
+//             current = current.next;
+//             prev=current;
+//             // if(c!=0) temp=temp.next;
+//             // c++;
+//         }
+//         return false;       
+//     }
