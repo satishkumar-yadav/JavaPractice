@@ -16,7 +16,7 @@ public class InsertElementSpirally {
         int n = 9;
         int a[][] = new int[n][n];
 
-        for (int i = 1; i <= n*n; i++) {
+        for (int i = 1; i <= n*n; i++) { 
             switch (dir) {
                 case 'r': {
                       col++;

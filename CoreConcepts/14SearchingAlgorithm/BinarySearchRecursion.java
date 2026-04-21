@@ -10,7 +10,7 @@ public class BinarySearchRecursion {
         else return binarySearchRecursion(a, key, mid+1, end);
     }
  
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
         int a[] = {1,2,4,5,6,8};
         int key = 6;
         int indx= binarySearchRecursion(a,key,0,a.length-1);
