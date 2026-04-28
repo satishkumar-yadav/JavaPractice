@@ -1,5 +1,5 @@
-
 import java.util.Arrays;
+
 /* 
    int a[] =  { 9,   5,   2,   4}
                j     j+1
@@ -10,25 +10,31 @@ import java.util.Arrays;
 
  */
 
-
-
 public class SelectionSort {
-     public static void main(String args[]) { 
-       int a[] = {9,5,2,5,4};
-       selectionSort(a);
-       System.out.println(Arrays.toString(a));
-    }
-    
-    static void selectionSort(int[]a){
-        for(int i=0; i<a.length; i++){
-           int minIndex= i;
-           for(int j=i+1; j<a.length; j++){
-               if(a[j]<a[minIndex]) minIndex = j;
-           }
-           int temp = a[i];
-           a[i] = a[minIndex];
-           a[minIndex]=temp;
+
+    static void selectionSort(int arr[]){
+
+    // finding minimum or largest element and moving it to its correct position, here finding minimum element
+    //initially supposing arr[0] to be minimum and updating minimum if found , else swaping or moving minimum element
+
+    // {9,1,2,8,2,0,3,6,6,9,1,7}
+    for (int i = 0; i < arr.length; i++) {
+        int minIndex = i;
+        for (int j = i+1; j < arr.length; j++) {
+            if(arr[j]<arr[minIndex]) minIndex=j;
         }
-    
+        int temp=arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+
+    }
+    }
+
+    public static void main(String[] args) {
+         int [] arr = {9,1,2,8,2,0,3,6,6,9,1,7};
+
+        selectionSort(arr);
+
+        System.out.println(Arrays.toString(arr));
     }
 }
