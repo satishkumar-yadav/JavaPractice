@@ -1,0 +1,48 @@
+
+
+
+public class JdbcInsert {
+
+	
+}
+
+/*
+
+ import java.sql.SQLException;
+import java.sql.Statement;
+
+public class JDBC_Insert {
+public static void main(String args[]){
+ String url="jdbc:postgresql://localhost:5432/student_db";
+String user = "postgres";
+String password = "root";
+
+try{
+Class.forName("org.postgresql.Driver");
+Connection conn = DriverManager.getConnection(url,user,password);
+Statement st = conn.createStatement();
+String q1="INSERT INTO student VALUES(1,'John',88.25,'john@gmail.com')";
+String q2="INSERT INTO student VALUES(1,'Doe',95.00,'doe@gmail.com')";
+String q3="INSERT INTO student VALUES(1,'Ram',99.00,'ram@gmail.com')";
+
+st.execute(q1);
+st.execute(q2);
+st.execute(q3);
+
+// update 
+
+String q3= "UPDATE student SET stuname='Lily' WHERE stuid=1';
+ 
+
+
+conn.close();
+System.out.println("All querry executed, data inserted");
+} catch(ClassNotFoundException e){
+e.printStackTrace();
+} catch(SQLException se){
+se.printStackTrace();
+}
+}
+}
+
+*/
