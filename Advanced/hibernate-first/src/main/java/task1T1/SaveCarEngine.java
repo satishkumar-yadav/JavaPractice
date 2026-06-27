@@ -5,8 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import mapping1T1.Car;
-import mapping1T1.Engine;
+
 
 public class SaveCarEngine {
 
@@ -16,10 +15,10 @@ public class SaveCarEngine {
 		EntityTransaction et = em.getTransaction();
 
 		//5 engine
-		Engine e1 = new Engine();
-		e1.setEngid(2);
-		e1.setType("Petrol");
-		e1.setCc(1000);
+//		Engine e1 = new Engine();
+//		e1.setEngid(2);
+//		e1.setType("Petrol");
+//		e1.setCc(1000);
 		
 //		Engine e2 = new Engine();
 //		e2.setEngid(3);
@@ -42,18 +41,18 @@ public class SaveCarEngine {
 //		e5.setCc(1200);
 		
 		//save engines
-		em.persist(e1);
+	//	em.persist(e1);
 //		em.persist(e2);
 //		em.persist(e3);
 //		em.persist(e4);
 //		em.persist(e5);
 		
 		//5 cars
-		Car c1 = new Car();
-		c1.setCid(201);
-		c1.setBrand("Tata");
-		c1.setCost(1000000.0);
-		c1.setEng(e1);
+//		Car c1 = new Car();
+//		c1.setCid(201);
+//		c1.setBrand("Tata");
+//		c1.setCost(1000000.0);
+//		c1.setEng(e1);
 		
 //		Car c2 = new Car();
 //		c2.setCid(301);
@@ -80,7 +79,7 @@ public class SaveCarEngine {
 //		c5.setEng(e2);
 		
 		//save cars
-		em.persist(c1);
+	//	em.persist(c1);
 //		em.persist(c2);
 //		em.persist(c3);
 //		em.persist(c4);
