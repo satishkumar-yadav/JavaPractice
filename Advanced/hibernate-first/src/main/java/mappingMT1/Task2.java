@@ -1,4 +1,4 @@
-//package task1Tm;
+//package mappingMT1;
 //
 //import java.util.List;
 //
@@ -7,29 +7,24 @@
 //import javax.persistence.EntityTransaction;
 //import javax.persistence.Persistence;
 //
-//public class UpdateBookUsingLib {
+//public class Task2 {
 //
-//	//Task 2. Using library object bring first book and update that Book price
+//	// Task 2: Using Account object bring first bank and update that bank address and name
 //	public static void main(String[] args) {
 //		EntityManagerFactory emf = Persistence.createEntityManagerFactory("dbInfo");
 //		EntityManager em = emf.createEntityManager();
 //		EntityTransaction et = em.getTransaction();
-//
-//		Library lb = em.find(Library.class, 1);
+//		
+//		Account ac = em.find(Account.class, 1);
 //		 
-//		List<Book> booklist = lb.getBooklist();
+//		Bank b = ac.getBank();
 //		
-//		//System.out.println(booklist);
+//		b.setName("Kotak");
+//		b.setBranch("BTM");
 //		
-//		Book b1 = booklist.getFirst();
-//		b1.setPrice(3000.0);
+//		//update account
+//		em.merge(ac);
 //		
-//		//System.out.println(b1);
-//		//System.out.println(booklist);
-//		
-//		//update library
-//		em.merge(lb);
-//
 //		et.begin();
 //		et.commit();
 //
