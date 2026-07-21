@@ -1,4 +1,4 @@
-package first;
+package third;
 
 import org.jspecify.annotations.Nullable;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -22,5 +22,5 @@ public class HomeInitializer extends AbstractAnnotationConfigDispatcherServletIn
 										return new String [] {"/"};
 									}
 
-} 
+}
  

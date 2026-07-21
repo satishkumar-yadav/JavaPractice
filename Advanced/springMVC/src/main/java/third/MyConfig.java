@@ -1,4 +1,4 @@
-package first;
+package third;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,4 +10,3 @@ public class MyConfig {
 	//bean def
 	
 }
- 

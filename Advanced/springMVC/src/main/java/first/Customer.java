@@ -7,7 +7,7 @@ public class Customer {
 	private String productName;
 	private double productPrice;
 	
-	
+	 
 	public int getCustomerId() {
 		return customerId;
 	}

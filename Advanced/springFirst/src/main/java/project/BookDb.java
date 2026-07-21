@@ -20,7 +20,7 @@ public class BookDb {
 	 em.persist(b);
 	 et.begin();
 	 et.commit();
- }
+ } 
  
  public void updateBook(Book b) {
 	 em.merge(b);
