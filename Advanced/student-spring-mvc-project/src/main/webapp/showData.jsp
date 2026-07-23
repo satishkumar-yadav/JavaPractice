@@ -14,7 +14,7 @@
 List<Student> students = (List<Student>) request.getAttribute("students");
 %>
 
-  <table border="1">
+  <table border="1"> 
      <tr>
          <th>ID </th>
          <th>Name </th>

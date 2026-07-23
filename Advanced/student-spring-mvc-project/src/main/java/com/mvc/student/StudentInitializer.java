@@ -20,9 +20,16 @@ public class StudentInitializer extends AbstractAnnotationConfigDispatcherServle
 		return new String [] {"/"};
 	}
 
-	@Override
-	protected String getServletName() {
-	    return "studentDispatcher"; // unique name
-	}
+	//manually recommended by gpt for unique dispatcher name
+//		@Override
+//		protected String getServletName() {
+//		    return "studentDispatcher"; // unique name
+//		}
 	
 }
+
+
+
+
+
+

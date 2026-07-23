@@ -20,9 +20,11 @@ public class HomeController {
 	HttpServletResponse res;
 	@Autowired
 	StudentDb db;
-	@Autowired
-	List<Student> ls ;
+//	@Autowired
+//	List<Student> ls ;
 
+	// http://localhost:8081/student-spring-mvc-project/register.jsp
+	//http://localhost:8081/student-spring-mvc-project/register?name=satish+kumar&age=24&marks=94.0&email=satish%40gmail.com&password=1234567890
 	@RequestMapping("/register")  //reading into java obj
 	public String readDataFromRegForm(@ModelAttribute Student s) {
 		System.out.println(s.getId()+" "+s.getName()+" "+s.getAge()+" "+s.getMarks()+" "+s.getEmail()+" "+s.getPassword());
@@ -40,7 +42,7 @@ public class HomeController {
 	@RequestMapping("/login")   // reading and auto typecasting
 	public String readDataFromFormM2(@RequestParam("email") String email, @RequestParam("password") String password ) {
 		System.out.println(email+" "+password);
-		ls = db.findStudentByEmailAndPassword(email, password);
+		List<Student> ls = db.findStudentByEmailAndPassword(email, password);
 		if(!ls.isEmpty()) 	{
 			req.setAttribute("msg", "Login Successful");
 			return "success.jsp";

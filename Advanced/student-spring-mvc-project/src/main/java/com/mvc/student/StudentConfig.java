@@ -30,9 +30,9 @@ public class StudentConfig {
 //	    	return new Scanner(System.in);
 //	    }
 
-	    @Bean
-	    public List<Student> getAL() {
-	    	return new ArrayList<>();
-	    }
+//	    @Bean
+//	    public List<Student> getAL() {
+//	    	return new ArrayList<>();
+//	    }
 
 }
